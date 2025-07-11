@@ -6,6 +6,8 @@ import Testimonials from '@/components/landing/testimonials';
 import InfoSection from '@/components/landing/info-section';
 import StatsSection from '@/components/landing/stats-section';
 import AiToast from '@/components/landing/ai-toast';
+import WhatIsSugar from '@/components/landing/what-is-sugar';
+import SecuritySection from '@/components/landing/security-section';
 
 export default function Home() {
   return (
@@ -15,7 +17,8 @@ export default function Home() {
         <HeroSection />
         <FeaturedProfiles />
         <Testimonials />
-        <InfoSection />
+        <WhatIsSugar />
+        <SecuritySection />
         <StatsSection />
         <AiToast />
       </main>
