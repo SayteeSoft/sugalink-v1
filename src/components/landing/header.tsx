@@ -18,7 +18,7 @@ export default function LandingHeader() {
              <Link href="/profile" className="text-foreground/60 transition-colors hover:text-foreground/80">Profile</Link>
              <Link href="/messages" className="text-foreground/60 transition-colors hover:text-foreground/80">Messages</Link>
              <Link href="/search" className="text-foreground/60 transition-colors hover:text-foreground/80">Search</Link>
-             <Link href="#" className="text-foreground/60 transition-colors hover:text-foreground/80">Matches</Link>
+             <Link href="/matches" className="text-foreground/60 transition-colors hover:text-foreground/80">Matches</Link>
           </nav>
           <div className="flex items-center gap-4 ml-8">
              <Button asChild>
@@ -43,7 +43,7 @@ export default function LandingHeader() {
                    <Link href="/profile" className="text-muted-foreground hover:text-foreground">Profile</Link>
                    <Link href="/messages" className="text-muted-foreground hover:text-foreground">Messages</Link>
                    <Link href="/search" className="text-muted-foreground hover:text-foreground">Search</Link>
-                   <Link href="#" className="text-muted-foreground hover:text-foreground">Matches</Link>
+                   <Link href="/matches" className="text-muted-foreground hover:text-foreground">Matches</Link>
                    <Button asChild>
                       <Link href="/signup">Buy Credits</Link>
                    </Button>
