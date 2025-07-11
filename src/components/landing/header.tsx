@@ -15,9 +15,9 @@ export default function LandingHeader() {
         </div>
         <div className="flex flex-1 items-center justify-end space-x-2">
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-             <Link href="#" className="text-foreground/60 transition-colors hover:text-foreground/80">Profile</Link>
-             <Link href="#" className="text-foreground/60 transition-colors hover:text-foreground/80">Messages</Link>
-             <Link href="#" className="text-foreground/60 transition-colors hover:text-foreground/80">Search</Link>
+             <Link href="/profile" className="text-foreground/60 transition-colors hover:text-foreground/80">Profile</Link>
+             <Link href="/messages" className="text-foreground/60 transition-colors hover:text-foreground/80">Messages</Link>
+             <Link href="/search" className="text-foreground/60 transition-colors hover:text-foreground/80">Search</Link>
              <Link href="#" className="text-foreground/60 transition-colors hover:text-foreground/80">Matches</Link>
           </nav>
           <div className="flex items-center gap-4 ml-8">
@@ -40,9 +40,9 @@ export default function LandingHeader() {
                     <Gem className="h-6 w-6 text-primary" />
                     <span className="font-bold">SugarLink</span>
                   </Link>
-                   <Link href="#" className="text-muted-foreground hover:text-foreground">Profile</Link>
-                   <Link href="#" className="text-muted-foreground hover:text-foreground">Messages</Link>
-                   <Link href="#" className="text-muted-foreground hover:text-foreground">Search</Link>
+                   <Link href="/profile" className="text-muted-foreground hover:text-foreground">Profile</Link>
+                   <Link href="/messages" className="text-muted-foreground hover:text-foreground">Messages</Link>
+                   <Link href="/search" className="text-muted-foreground hover:text-foreground">Search</Link>
                    <Link href="#" className="text-muted-foreground hover:text-foreground">Matches</Link>
                    <Button asChild>
                       <Link href="/signup">Buy Credits</Link>
