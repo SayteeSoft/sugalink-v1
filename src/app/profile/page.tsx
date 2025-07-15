@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Edit, Heart, Mail, MapPin, Flag, MessageSquare } from 'lucide-react';
 import { getUserById } from '@/services/userService';
 import type { User } from '@/models/user';
+import Link from 'next/link';
 
 export default async function ProfilePage() {
   // For now, we'll fetch the admin user as the default logged-in user.
@@ -66,9 +67,11 @@ export default async function ProfilePage() {
                     <Mail className="h-4 w-4" />
                     <span>{user.email}</span>
                   </div>
-                  <Button variant="outline" className="mt-4 w-full bg-accent hover:bg-accent/80">
-                    <Edit className="h-4 w-4 mr-2" />
-                    Edit Profile
+                  <Button variant="outline" className="mt-4 w-full bg-accent hover:bg-accent/80" asChild>
+                    <Link href="/profile/edit">
+                      <Edit className="h-4 w-4 mr-2" />
+                      Edit Profile
+                    </Link>
                   </Button>
                 </div>
               </CardContent>

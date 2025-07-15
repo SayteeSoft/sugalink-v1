@@ -1,8 +1,16 @@
 
 import type { User } from '@/models/user';
 import usersData from '@/data/users.json';
+import fs from 'fs/promises';
+import path from 'path';
 
+// This is a poor-man's "database" for local development.
+// In a real application, this would be a proper database.
 const users: User[] = usersData as User[];
+
+// Get the path to the JSON file
+const dataFilePath = path.resolve(process.cwd(), 'src/data/users.json');
+
 
 /**
  * Simulates an API call to get all users.
@@ -23,4 +31,27 @@ export async function getUserById(id: string): Promise<User | undefined> {
   // Simulate network delay
   await new Promise(resolve => setTimeout(resolve, 200));
   return users.find(user => user.id === id);
+}
+
+/**
+ * Simulates an API call to update a user's profile.
+ * In a real application, this would update data in a database.
+ * @param updatedUser The user object with updated data.
+ */
+export async function updateUser(updatedUser: User): Promise<void> {
+  const userIndex = users.findIndex(u => u.id === updatedUser.id);
+  if (userIndex === -1) {
+    throw new Error('User not found');
+  }
+
+  // Update the user in the in-memory array
+  users[userIndex] = updatedUser;
+
+  // Write the updated array back to the JSON file
+  try {
+    await fs.writeFile(dataFilePath, JSON.stringify(users, null, 2), 'utf-8');
+  } catch (error) {
+    console.error('Failed to write to users.json', error);
+    throw new Error('Failed to update user profile.');
+  }
 }
