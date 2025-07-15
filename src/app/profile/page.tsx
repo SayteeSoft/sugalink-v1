@@ -6,14 +6,12 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Edit, Heart, Mail, MapPin, Flag, MessageSquare } from 'lucide-react';
-import { getUserById } from '@/services/userService';
+import { getProfileAction } from './actions';
 import type { User } from '@/models/user';
 import Link from 'next/link';
 
 export default async function ProfilePage() {
-  // For now, we'll fetch the admin user as the default logged-in user.
-  // In the future, this will come from the logged-in user's session.
-  const user: User | undefined = await getUserById('admin-001');
+  const user: User | undefined = await getProfileAction('admin-001');
 
   if (!user) {
     return (

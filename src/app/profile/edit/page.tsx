@@ -105,12 +105,16 @@ export default function ProfileEditPage() {
     };
 
     try {
-      await updateProfileAction(updatedUserData);
-      toast({
-        title: "Profile Updated",
-        description: "Your changes have been saved successfully.",
-      });
-      router.push('/profile');
+      const result = await updateProfileAction(updatedUserData);
+       if (result.success) {
+        toast({
+          title: "Profile Updated",
+          description: "Your changes have been saved successfully.",
+        });
+        router.push('/profile');
+      } else {
+        throw new Error(result.message);
+      }
     } catch (error) {
       toast({
         variant: "destructive",

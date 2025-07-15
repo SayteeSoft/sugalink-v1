@@ -7,15 +7,25 @@
     "location": "London, UK",
     "email": "saytee.software@gmail.com",
     "avatar": "https://placehold.co/400x400.png",
-    "about": "Seasoned executive who enjoys mentoring and sharing life's experiences. Looking for a bright and engaging companion to enjoy fine dining and travel.",
-    "wants": ["Mentorship", "Travel Partner"],
-    "interests": ["Fine Dining", "Travel", "Reading"],
+    "about": "Seasoned executive who enjoys mentoring and sharing life's experiences. Looking for a bright and engaging companion to enjoy fine dining and travel. hahaha",
+    "wants": [
+      "Mentorship",
+      "Travel Partner"
+    ],
+    "interests": [
+      "Fine Dining",
+      "Travel",
+      "Reading"
+    ],
     "gallery": [
-      { "src": "https://placehold.co/400x300.png", "hint": "man vacation" }
+      {
+        "src": "https://placehold.co/400x300.png",
+        "hint": "man vacation"
+      }
     ],
     "attributes": {
       "Age": 49,
-      "Height": "5'10\"",
+      "Height": "6'0\"",
       "Body Type": "Average",
       "Ethnicity": "White",
       "Hair Color": "Brown",
@@ -36,10 +46,20 @@
     "email": "james.daddy@email.com",
     "avatar": "https://placehold.co/400x400.png",
     "about": "Tech CEO who works hard and plays harder. I enjoy fine wine, fast cars, and intelligent conversation.",
-    "wants": ["Meaningful Connection", "Good Company"],
-    "interests": ["Technology", "Cars", "Wine Tasting"],
+    "wants": [
+      "Meaningful Connection",
+      "Good Company"
+    ],
+    "interests": [
+      "Technology",
+      "Cars",
+      "Wine Tasting"
+    ],
     "gallery": [
-      { "src": "https://placehold.co/400x300.png", "hint": "distinguished man" }
+      {
+        "src": "https://placehold.co/400x300.png",
+        "hint": "distinguished man"
+      }
     ],
     "attributes": {
       "Age": 52,
@@ -64,10 +84,20 @@
     "email": "kateryna.baby@email.com",
     "avatar": "https://placehold.co/400x400.png",
     "about": "Recent graduate starting my career in marketing. I have a passion for art, fashion, and exploring new cities.",
-    "wants": ["Financial Support", "Mentorship"],
-    "interests": ["Art", "Fashion", "Traveling"],
+    "wants": [
+      "Financial Support",
+      "Mentorship"
+    ],
+    "interests": [
+      "Art",
+      "Fashion",
+      "Traveling"
+    ],
     "gallery": [
-      { "src": "https://placehold.co/400x300.png", "hint": "woman portrait" }
+      {
+        "src": "https://placehold.co/400x300.png",
+        "hint": "woman portrait"
+      }
     ],
     "attributes": {
       "Age": 23,
