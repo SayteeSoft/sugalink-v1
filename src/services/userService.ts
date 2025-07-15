@@ -8,10 +8,6 @@ import path from 'path';
 // In a real application, this would be a proper database.
 const users: User[] = usersData as User[];
 
-// Get the path to the JSON file
-const dataFilePath = path.resolve(process.cwd(), 'src/data/users.json');
-
-
 /**
  * Simulates an API call to get all users.
  * In a real application, this would fetch data from a database.
@@ -39,17 +35,24 @@ export async function getUserById(id: string): Promise<User | undefined> {
  * @param updatedUser The user object with updated data.
  */
 export async function updateUser(updatedUser: User): Promise<void> {
+  const dataFilePath = path.resolve(process.cwd(), 'src/data/users.json');
+  
   const userIndex = users.findIndex(u => u.id === updatedUser.id);
   if (userIndex === -1) {
     throw new Error('User not found');
   }
 
   // Update the user in the in-memory array
-  users[userIndex] = updatedUser;
+  const currentUsers = JSON.parse(await fs.readFile(dataFilePath, 'utf-8'));
+  
+  const newUsers = currentUsers.map((u: User) => u.id === updatedUser.id ? updatedUser : u);
 
   // Write the updated array back to the JSON file
   try {
-    await fs.writeFile(dataFilePath, JSON.stringify(users, null, 2), 'utf-8');
+    await fs.writeFile(dataFilePath, JSON.stringify(newUsers, null, 2), 'utf-8');
+    // Also update the in-memory cache for subsequent reads in the same process
+    users.length = 0;
+    Array.prototype.push.apply(users, newUsers);
   } catch (error) {
     console.error('Failed to write to users.json', error);
     throw new Error('Failed to update user profile.');

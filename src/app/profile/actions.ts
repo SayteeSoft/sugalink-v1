@@ -2,8 +2,12 @@
 
 import { revalidatePath } from 'next/cache';
 import { z } from 'zod';
-import { updateUser } from '@/services/userService';
+import { updateUser, getUserById } from '@/services/userService';
 import type { User } from '@/models/user';
+
+export async function getProfileAction(id: string) {
+  return await getUserById(id);
+}
 
 export async function updateProfileAction(userData: User) {
   // We can perform validation here with Zod on the server as an extra layer of security

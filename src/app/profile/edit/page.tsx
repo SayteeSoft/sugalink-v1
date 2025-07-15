@@ -25,11 +25,10 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Header from '@/components/landing/header';
 import Footer from '@/components/landing/footer';
-import { getUserById } from "@/services/userService"
 import { type User } from "@/models/user"
 import { useEffect, useState } from "react"
 import { Skeleton } from "@/components/ui/skeleton"
-import { updateProfileAction } from "../actions"
+import { updateProfileAction, getProfileAction } from "../actions"
 import { useToast } from "@/hooks/use-toast"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
@@ -64,9 +63,9 @@ export default function ProfileEditPage() {
   useEffect(() => {
     async function fetchUser() {
       // In a real app, you'd get the logged-in user's ID
-      const fetchedUser = await getUserById('admin-001');
+      const fetchedUser = await getProfileAction('admin-001');
       if (fetchedUser) {
-        setUser(fetchedUser);
+        setUser(fetchedUser as User);
         form.reset(fetchedUser);
       }
       setIsLoading(false);
