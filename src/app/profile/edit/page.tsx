@@ -32,6 +32,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 import { updateProfileAction } from "../actions"
 import { useToast } from "@/hooks/use-toast"
 import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 const profileFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
