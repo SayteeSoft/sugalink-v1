@@ -1,3 +1,4 @@
+
 import Header from '@/components/landing/header';
 import Footer from '@/components/landing/footer';
 import Image from 'next/image';
@@ -5,36 +6,27 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Edit, Heart, Mail, MapPin, Flag, MessageSquare } from 'lucide-react';
+import { getUserById } from '@/services/userService';
+import type { User } from '@/models/user';
 
-const user = {
-  name: 'Larry',
-  role: 'Sugar Daddy',
-  location: 'London, UK',
-  email: 'larry.saytee@email.com',
-  avatar: 'https://placehold.co/400x400.png',
-  about: "Seasoned executive who enjoys mentoring and sharing life's experiences. Looking for a bright and engaging companion to enjoy fine dining and travel.",
-  wants: ['Mentorship', 'Travel Partner'],
-  interests: ['Fine Dining', 'Travel', 'Reading'],
-  gallery: [
-    { src: 'https://placehold.co/400x300.png', hint: 'man vacation' },
-  ],
-  attributes: {
-    Age: 49,
-    Height: "5'10\"",
-    'Body Type': 'Average',
-    Ethnicity: 'White',
-    'Hair Color': 'Brown',
-    'Eye Color': 'Brown',
-    Smoker: 'No',
-    Drinker: 'Socially',
-    Piercings: 'No',
-    Tattoos: 'No',
-  },
-  verified: true,
-};
+export default async function ProfilePage() {
+  // For now, we'll fetch the admin user as the default logged-in user.
+  // In the future, this will come from the logged-in user's session.
+  const user: User | undefined = await getUserById('admin-001');
 
+  if (!user) {
+    return (
+        <div className="flex flex-col min-h-screen bg-accent">
+            <Header />
+            <main className="flex-grow container py-8 text-center">
+                <h1 className="text-2xl font-bold">User not found</h1>
+                <p className="text-muted-foreground">Could not find the requested user profile.</p>
+            </main>
+            <Footer />
+        </div>
+    );
+  }
 
-export default function ProfilePage() {
   return (
     <div className="flex flex-col min-h-screen bg-accent">
       <Header />
@@ -58,6 +50,9 @@ export default function ProfilePage() {
                       <CheckCircle className="h-4 w-4 mr-1" />
                       Verified
                     </Badge>
+                  )}
+                   {user.role === 'Admin' && (
+                    <Badge className="absolute top-4 right-4">Admin</Badge>
                   )}
                 </div>
                 <div className="p-6 text-center bg-card">
@@ -149,7 +144,7 @@ export default function ProfilePage() {
                   {Object.entries(user.attributes).map(([key, value]) => (
                      <li key={key} className="flex justify-between">
                         <span className="text-muted-foreground">{key}</span>
-                        <span className="font-medium">{value}</span>
+                        <span className="font-medium">{String(value)}</span>
                     </li>
                   ))}
                 </ul>

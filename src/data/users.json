@@ -1,0 +1,87 @@
+
+[
+  {
+    "id": "admin-001",
+    "name": "Admin",
+    "role": "Admin",
+    "location": "London, UK",
+    "email": "saytee.software@gmail.com",
+    "avatar": "https://placehold.co/400x400.png",
+    "about": "Seasoned executive who enjoys mentoring and sharing life's experiences. Looking for a bright and engaging companion to enjoy fine dining and travel.",
+    "wants": ["Mentorship", "Travel Partner"],
+    "interests": ["Fine Dining", "Travel", "Reading"],
+    "gallery": [
+      { "src": "https://placehold.co/400x300.png", "hint": "man vacation" }
+    ],
+    "attributes": {
+      "Age": 49,
+      "Height": "5'10\"",
+      "Body Type": "Average",
+      "Ethnicity": "White",
+      "Hair Color": "Brown",
+      "Eye Color": "Brown",
+      "Smoker": "No",
+      "Drinker": "Socially",
+      "Piercings": "No",
+      "Tattoos": "No"
+    },
+    "verified": true,
+    "credits": "Unlimited"
+  },
+  {
+    "id": "daddy-001",
+    "name": "James",
+    "role": "Sugar Daddy",
+    "location": "Manchester, UK",
+    "email": "james.daddy@email.com",
+    "avatar": "https://placehold.co/400x400.png",
+    "about": "Tech CEO who works hard and plays harder. I enjoy fine wine, fast cars, and intelligent conversation.",
+    "wants": ["Meaningful Connection", "Good Company"],
+    "interests": ["Technology", "Cars", "Wine Tasting"],
+    "gallery": [
+      { "src": "https://placehold.co/400x300.png", "hint": "distinguished man" }
+    ],
+    "attributes": {
+      "Age": 52,
+      "Height": "6'1\"",
+      "Body Type": "Athletic",
+      "Ethnicity": "White",
+      "Hair Color": "Salt & Pepper",
+      "Eye Color": "Blue",
+      "Smoker": "No",
+      "Drinker": "Socially",
+      "Piercings": "No",
+      "Tattoos": "No"
+    },
+    "verified": true,
+    "credits": 10
+  },
+  {
+    "id": "baby-001",
+    "name": "Kateryna",
+    "role": "Sugar Baby",
+    "location": "London, UK",
+    "email": "kateryna.baby@email.com",
+    "avatar": "https://placehold.co/400x400.png",
+    "about": "Recent graduate starting my career in marketing. I have a passion for art, fashion, and exploring new cities.",
+    "wants": ["Financial Support", "Mentorship"],
+    "interests": ["Art", "Fashion", "Traveling"],
+    "gallery": [
+      { "src": "https://placehold.co/400x300.png", "hint": "woman portrait" }
+    ],
+    "attributes": {
+      "Age": 23,
+      "Height": "5'7\"",
+      "Body Type": "Slim",
+      "Ethnicity": "White",
+      "Hair Color": "Blonde",
+      "Eye Color": "Blue",
+      "Smoker": "No",
+      "Drinker": "Socially",
+      "Piercings": "Yes",
+      "Tattoos": "No"
+    },
+    "verified": true,
+    "credits": "Unlimited"
+  }
+]
